@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Sentiment Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1> Sentiment Analyzer</h1>
+      <div class="theme-toggle">
+        <button id="themeToggle" title="Changer le thème">🌙</button>
+      </div>
+    </div>
+
+    <!-- Section principale -->
+    <div class="main-section">
+      <!-- Bouton d'analyse -->
+      <button id="analyzeBtn" class="btn-primary">
+         Analyser les commentaires
+      </button>
+
+      <!-- Zone de chargement -->
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Analyse en cours...</p>
+      </div>
+
+      <!-- Statistiques globales -->
+      <div id="statsSection" class="stats-section hidden">
+        <h2> Statistiques Globales</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="totalComments">0</div>
+            <div class="stat-label">Commentaires</div>
+          </div>
+          <div class="stat-card positive">
+            <div class="stat-value" id="positivePercent">0%</div>
+            <div class="stat-label">Positifs</div>
+          </div>
+          <div class="stat-card neutral">
+            <div class="stat-value" id="neutralPercent">0%</div>
+            <div class="stat-label">Neutres</div>
+          </div>
+          <div class="stat-card negative">
+            <div class="stat-value" id="negativePercent">0%</div>
+            <div class="stat-label">Négatifs</div>
+          </div>
+        </div>
+
+        <!-- Barre de progression -->
+        <div class="sentiment-bar">
+          <div class="sentiment-segment positive" id="positiveBar"></div>
+          <div class="sentiment-segment neutral" id="neutralBar"></div>
+          <div class="sentiment-segment negative" id="negativeBar"></div>
+        </div>
+      </div>
+
+      <!-- Filtres -->
+      <div id="filtersSection" class="filters-section hidden">
+        <h3> Filtres</h3>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="positive">Positifs</button>
+          <button class="filter-btn" data-filter="neutral">Neutres</button>
+          <button class="filter-btn" data-filter="negative">Négatifs</button>
+        </div>
+      </div>
+
+      <!-- Liste des commentaires -->
+      <div id="commentsSection" class="comments-section hidden">
+        <div class="section-header">
+          <h3> Commentaires Analysés</h3>
+          <button id="copyBtn" class="btn-secondary" title="Copier les résultats">
+            Copier
+          </button>
+        </div>
+        <div id="commentsList" class="comments-list"></div>
+      </div>
+
+      <!-- Message d'erreur -->
+      <div id="errorSection" class="error-section hidden">
+        <p id="errorMessage"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Powered by ML & FastAPI</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
