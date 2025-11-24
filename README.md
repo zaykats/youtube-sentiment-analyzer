@@ -305,7 +305,6 @@ Input Text → TF-IDF Vectorizer → Logistic Regression → Sentiment Predictio
 **Institution** : École Nationale Supérieure d'Arts et Métiers (ENSAM) - Rabat  
 **Filière** : INDIA  
 **Module** : Virtualisation & Cloud Computing  
-**Professeur** : Maria Zemzami  
 **Année Universitaire** : 2025/26
 
 ## 👨‍💻 Auteur
